@@ -1,0 +1,58 @@
+footer {
+    background-color: $brand-secondary;
+    padding: 60px 0;
+
+    .footer-main {
+        &-headline {
+            margin-bottom: 20px;
+        }
+
+        &-text {
+            margin-bottom: 50px;
+        }
+
+        &-form {
+            z-index: 1;
+            margin-bottom: 90px;
+
+            textarea {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .icon-rings {
+        left: -300px;
+        bottom: 275px;
+    }
+
+    .imprint-privacy-nav {
+        color: $text-color;
+    }
+}
+
+@media (min-width: 576px) {
+    footer .icon-rings {
+        bottom: 220px;
+    }
+}
+
+@media (min-width: 768px) {
+    footer .icon-rings {
+        bottom: 175px;
+        left: -350px;
+    }
+}
+
+@media (min-width: 992px) {
+    footer {
+        .footer-main-text {
+            max-width: 445px;
+        }
+
+        .icon-rings {
+            bottom: 230px;
+            left: -200px;
+        }
+    }
+}

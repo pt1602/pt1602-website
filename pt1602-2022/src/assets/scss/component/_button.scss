@@ -1,0 +1,21 @@
+.btn {
+    border-radius: unset;
+    text-transform: uppercase;
+    letter-spacing: 2.3px;
+    font-weight: 700;
+    padding: 10px 0;
+    max-height: 46px;
+
+    &.btn-outline-primary {
+        border-color: $brand-primary;
+        border-width: 0 0 2px 0;
+        color: $white;
+        @include defaultTransition;
+
+        &:hover, &:active {
+            background: unset;
+            color: $brand-primary;
+            border-color: $brand-primary;
+        }
+    }
+}

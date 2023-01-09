@@ -1,0 +1,21 @@
+.form-control {
+    border-radius: unset;
+    background: unset;
+    border-width: 0 0 1px 0;
+    text-transform: uppercase;
+    min-height: 43px;
+    margin-bottom: 32px;
+    color: $white;
+    letter-spacing: -0.25px;
+
+    &:focus {
+        background: unset;
+        border-color: $brand-primary;
+        box-shadow: unset;
+        color: $white;
+    }
+}
+
+textarea.form-control {
+    min-height: 110px;
+}

@@ -1,0 +1,19 @@
+.projects {
+    padding-bottom: 40px;
+
+    &-headline {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 768px) {
+    .projects {
+        padding-bottom: 60px;
+    }
+}
+
+@media (min-width: 992px) {
+    .projects {
+        padding-bottom: 100px;
+    }
+}

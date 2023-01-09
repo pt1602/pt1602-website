@@ -1,0 +1,24 @@
+body {
+    background-color: $background-primary;
+}
+
+p, a {
+    color: $text-color;
+}
+
+a {
+    color: $text-color;
+    @include defaultTransition;
+    text-underline-offset: 3px;
+    text-decoration-color: $brand-primary;
+
+    &:hover {
+        color: $brand-primary
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1110px;
+    }
+}

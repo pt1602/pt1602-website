@@ -1,0 +1,7 @@
+.svg-inline--fa {
+    @include defaultTransition;
+
+    &:hover {
+        color: $brand-primary;
+    }
+}
