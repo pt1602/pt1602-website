@@ -1,34 +1,34 @@
 <script setup lang="ts">
 import {RouterLink, RouterView} from 'vue-router'
-import Masthead from "@/components/Masthead.vue";
+import MainNavigation from "@/layout/MainNavigation.vue";
+import Projects from "@/layout/Projects.vue";
+import Masthead from "@/layout/Masthead.vue";
+import Footer from "@/layout/Footer.vue";
 import Skills from "@/components/Skills.vue";
-import Projects from "@/components/Projects.vue";
-import Footer from "@/components/Footer.vue";
-import MainNavigation from "@/components/MainNavigation.vue";
 
 /* Navigation */
-const mainnav: ({ name?: string, isFooter?: boolean }) = {
+const mainnav: ({ name: string, isFooter?: boolean }) = {
     name: "pt1602",
     isFooter: false
 };
 const socialMediaNav: ({ icon?: string; link?: string })[] = [
-    {icon: 'instagram', link: 'https://google.com/'},
-    {icon: 'github', link: 'https://google.com/'},
-    {icon: 'reddit', link: 'https://google.com/'},
-    {icon: 'linkedin', link: 'https://google.com/'}
+    {icon: 'instagram', link: 'https://instagram.com/ptgrafie'},
+    {icon: 'github', link: 'https://github.com/pt1602/'},
+    {icon: 'xing', link: 'https://www.xing.com/profile/Philipp_Tuchardt/'},
+    {icon: 'linkedin', link: 'https://www.linkedin.com/in/philipp-tuchardt-5a68b3246/'}
 ];
 
 /* Masthead */
 const masthead: { primaryoutlinebuttontext: string; primaryoutlinebuttonlink: string; name: string; description: string; subheadline: string } = {
     name: "Philipp Tuchardt",
     subheadline: "Nice to meet&nbsp;you!",
-    description: "A web-developer based in the middle of germany. Who is also widely interested in other tech stuff like linux systems, 3d printing and photography.",
-    primaryoutlinebuttontext: "Contact me",
-    primaryoutlinebuttonlink: "https://pt1602.de/"
+    description: "Ich bin Webentwickler aus Mitteldeutschland, mit breitgefächertem technischem Interesse. Unter anderem beschäftige ich mich in meiner Freizeit mit Linux-Systemen, 3D-Druck und Fotografie.",
+    primaryoutlinebuttontext: "Kontakt",
+    primaryoutlinebuttonlink: "#contact"
 };
 
 /* Skills */
-const skillUnit: string = "experience"
+const skillUnit: string = "Erfahrung"
 const skills: ({ name?: string; experience?: number })[] = [
     {name: 'Shopware', experience: 3},
     {name: 'Twig', experience: 3},
@@ -39,63 +39,58 @@ const skills: ({ name?: string; experience?: number })[] = [
 ];
 
 /* Projects */
-const projectsheadline: string = "Projects";
+const projectsheadline: string = "Projekte";
 const projectcontact: { primaryoutlinebuttontext: string; primaryoutlinebuttonlink: string; } = {
-    primaryoutlinebuttontext: "Contact me",
-    primaryoutlinebuttonlink: "https://pt1602.de/"
+    primaryoutlinebuttontext: "Kontakt",
+    primaryoutlinebuttonlink: "#contact"
 };
-const projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string })[] })[] = [
+const projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string, target: boolean })[] })[] = [
     {
-        name: 'Shopware',
-        skills: ["HTML", "CSS", "JS"],
+        name: 'Gerade schön',
+        skills: ["Wordpress", "PHP", "CSS"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "https://www.gerade-schoen.de", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: './src/assets/img/projects/gerade-schoen.jpg'
     },
     {
-        name: 'Twig',
-        skills: ["HTML", "CSS"],
+        name: 'Noon - DJ and Producer',
+        skills: ["Bootstrap", "HTML", "SCSS"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "https://noon-official.com/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: './src/assets/img/projects/noon-official.jpg'
     },
     {
-        name: 'SCSS',
-        skills: ["HTML", "CSS"],
+        name: 'Tuzuz',
+        skills: ["Wordpress", "WPBakery", "PHP"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "https://tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: './src/assets/img/projects/tuzuz.jpg'
     },
     {
-        name: 'Javascript',
-        skills: ["HTML", "CSS"],
+        name: 'Zahnheilkunde Lienemann',
+        skills: ["Wordpress", "PHP", "CSS"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "https://zahnheilkunde-lienemann.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: './src/assets/img/projects/zahnheilkunde-lienemann.jpg'
     },
     {
-        name: 'Vue',
-        skills: ["HTML", "CSS"],
+        name: 'Tuzuz Shop',
+        skills: ["Shopware", "Twig", "SCSS"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "https://shop.tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: './src/assets/img/projects/tuzuz-shop.jpg'
     },
     {
-        name: 'Vue',
-        skills: ["HTML", "CSS"],
+        name: 'Diese Website',
+        skills: ["Vue", "Bootstrap", "SCSS"],
         buttons: [
-            {link: "#", text: 'View Project'},
-            {link: "#", text: 'View Code'}
+            {link: "#", text: 'Zum Projekt', target: true},
+            {link: "#", text: 'Zum Code', target: true}
         ],
         image: './src/assets/img/projects/thumbnail-project-1-small.webp'
     },
@@ -103,23 +98,24 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
 
 /* Footer */
 const footer: { headline: string; text: string; sendbutton: string; isFooter: boolean; navigation: ({ link: string; text: string })[] } = {
-    headline: "Contact",
-    text: "I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.",
-    sendbutton: "Send Message",
+    headline: "Kontakt",
+    text: "Liebend gern würde ich mehr über dich und dein Projekt erfahren und wie ich dich unterstützen kann. Füll doch das Formular aus und ich komme so schnell wie möglich auf dich zurück.",
+    sendbutton: "Senden",
     isFooter: true,
     navigation: [
-        {link: "https://info.pt1602.de/", text: 'Impressum'},
-        {link: "https://info.pt1602.de/", text: 'Datenschutz'}
+        {link: "https://info.pt1602.de/?site=imprint", text: 'Impressum'},
+        {link: "https://info.pt1602.de/?site=privacy", text: 'Datenschutz'}
     ],
 };
 </script>
 
 <template>
     <header>
-        <MainNavigation :name="mainnav.name"
-                    :socialMediaNav="socialMediaNav"
-                    iconSize="xl"
-                    :isFooter="false"/>
+        <MainNavigation
+            :name="mainnav.name"
+            :socialMediaNav="socialMediaNav"
+            iconSize="xl"
+            :isFooter="false"/>
     </header>
     <main>
         <Masthead
@@ -137,7 +133,7 @@ const footer: { headline: string; text: string; sendbutton: string; isFooter: bo
                   :primaryoutlinebuttonlink="projectcontact.primaryoutlinebuttonlink"
                   :projects="projects"/>
     </main>
-    <footer class="position-relative">
+    <footer class="position-relative" id="contact">
         <Footer :headline="footer.headline"
                 :text="footer.text"
                 :sendbutton="footer.sendbutton"
@@ -146,17 +142,6 @@ const footer: { headline: string; text: string; sendbutton: string; isFooter: bo
                 :isFooter="footer.isFooter"
                 :footerNavigation="footer.navigation"/>
     </footer>
-    <!--  <header>
-        <img alt="Vue logo" class="logo" src="@/assets/img/logo.svg" width="125" height="125" />
-
-        <div class="wrapper">
-          <HelloWorld msg="You did it!" />
-
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-          </nav>
-        </div>
-      </header>
-
-      <RouterView />-->
 </template>
+
+

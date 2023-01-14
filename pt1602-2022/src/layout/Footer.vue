@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Navigation from "@/components/MainNavigation.vue";
+import Navigation from "@/layout/MainNavigation.vue";
 import IconRings from "@/components/icons/IconRings.vue";
 
 defineProps<{
@@ -25,7 +25,7 @@ defineProps<{
                 <form class="footer-main-form position-relative" action="https://formsubmit.co/website@pt1602.de" method="POST">
                     <input class="form-control pt-0 px-4 pb-3" placeholder="Name" type="text" name="name" required>
                     <input class="form-control pt-0 px-4 pb-3" placeholder="E-Mail" type="email" name="email" required>
-                    <textarea class="form-control pt-0 px-4 pb-3" placeholder="Message" type="text" name="name"
+                    <textarea class="form-control pt-0 px-4 pb-3" placeholder="Nachricht" type="text" name="name"
                               required></textarea>
                     <input type="hidden" name="_next" value="#">
                     <input type="hidden" name="_subject" value="Neue Kontaktanfrage">

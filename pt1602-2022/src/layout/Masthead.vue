@@ -18,13 +18,11 @@ defineProps<{
         <div class="masthead-content text-center text-md-start mt-md-0">
             <div class="masthead-headline">
                 <div class="h1 mb-0" v-if="subheadline" v-html="subheadline"></div>
-                <h1 class="h1 mb-0" v-if="name">I'm <span class="masthead-headline-name"><vue-typewriter-effect
-                    :strings="['a web developer.', 'a tech enthusiast.', name]"/>
+                <h1 class="h1 mb-0" v-if="name">I'm <span class="masthead-headline-name">
+                    <vue-typewriter-effect :strings="['a web developer.', 'a tech enthusiast.', name]"/>
                 </span></h1>
             </div>
-            <p class="masthead-text">
-                {{ description }}
-            </p>
+            <p class="masthead-text">{{ description }}</p>
             <PrimaryOutlineButton :primaryoutlinebuttontext="primaryoutlinebuttontext"
                                   :primaryoutlinebuttonlink="primaryoutlinebuttonlink"/>
         </div>
