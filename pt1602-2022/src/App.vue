@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {RouterLink, RouterView} from 'vue-router'
 import MainNavigation from "@/layout/MainNavigation.vue";
 import Projects from "@/layout/Projects.vue";
 import Masthead from "@/layout/Masthead.vue";
@@ -51,7 +50,7 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         buttons: [
             {link: "https://www.gerade-schoen.de", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/gerade-schoen.jpg'
+        image: 'gerade-schoen.jpg'
     },
     {
         name: 'Noon - DJ and Producer',
@@ -59,7 +58,7 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         buttons: [
             {link: "https://noon-official.com/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/noon-official.jpg'
+        image: 'noon-official.jpg'
     },
     {
         name: 'Tuzuz',
@@ -67,7 +66,7 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         buttons: [
             {link: "https://tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/tuzuz.jpg'
+        image: 'tuzuz.jpg'
     },
     {
         name: 'Zahnheilkunde Lienemann',
@@ -75,7 +74,15 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         buttons: [
             {link: "https://zahnheilkunde-lienemann.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/zahnheilkunde-lienemann.jpg'
+        image: 'zahnheilkunde-lienemann.jpg'
+    },
+    {
+        name: 'Mein Notizbuch',
+        skills: ["Hugo", "Markdown", "CSS"],
+        buttons: [
+            {link: "https://blog.pt1602.de/", text: 'Zum Projekt', target: true},
+        ],
+        image: 'blog.pt1602.jpg'
     },
     {
         name: 'Tuzuz Shop',
@@ -83,23 +90,14 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         buttons: [
             {link: "https://shop.tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
-        image: './src/assets/img/projects/tuzuz-shop.jpg'
-    },
-    {
-        name: 'Diese Website',
-        skills: ["Vue", "Bootstrap", "SCSS"],
-        buttons: [
-            {link: "#", text: 'Zum Projekt', target: true},
-            {link: "#", text: 'Zum Code', target: true}
-        ],
-        image: './src/assets/img/projects/thumbnail-project-1-small.webp'
+        image: 'tuzuz-shop.jpg'
     },
 ];
 
 /* Footer */
 const footer: { headline: string; text: string; sendbutton: string; isFooter: boolean; navigation: ({ link: string; text: string })[] } = {
     headline: "Kontakt",
-    text: "Liebend gern würde ich mehr über dich und dein Projekt erfahren und wie ich dich unterstützen kann. Füll doch das Formular aus und ich komme so schnell wie möglich auf dich zurück.",
+    text: "Liebend gern würde ich mehr über dich und dein Projekt erfahren, auch wie ich dich unterstützen kann. Füll doch das Formular aus und ich komme so schnell wie möglich auf dich zurück.<br>Du hast es eilig? Buche dir direkt einen <a href='https://calendly.com/pt1602/meeting' target='_blank'>Termin.</a>",
     sendbutton: "Senden",
     isFooter: true,
     navigation: [

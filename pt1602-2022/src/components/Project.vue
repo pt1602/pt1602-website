@@ -9,7 +9,7 @@ defineProps<{
 <template>
     <div class="project">
         <Tilt>
-            <div class="project-image" :style="{'background-image': `url('${project.image}')`}">
+            <div class="project-image" :style="{'background-image': `url('./img/projects/${project.image}')`}">
                 <div
                     class="project-image-overlay w-100 h-100 d-none d-lg-flex align-items-center justify-content-center text-center">
                     <div class="project-buttons-desktop">

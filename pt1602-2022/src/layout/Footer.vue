@@ -19,10 +19,11 @@ defineProps<{
         <div class="row">
             <div class="col-lg-7">
                 <div class="footer-main-headline h1" v-if="headline">{{ headline }}</div>
-                <p class="footer-main-text" v-if="text">{{ text }}</p>
+                <p class="footer-main-text" v-if="text" v-html="text"></p>
             </div>
-            <div class="col-lg-5">
-                <form class="footer-main-form position-relative" action="https://formsubmit.co/website@pt1602.de" method="POST">
+            <div class="col-lg-5 footer-form-col">
+                <form class="footer-main-form position-relative" action="https://formsubmit.co/website@pt1602.de"
+                      method="POST">
                     <input class="form-control pt-0 px-4 pb-3" placeholder="Name" type="text" name="name" required>
                     <input class="form-control pt-0 px-4 pb-3" placeholder="E-Mail" type="email" name="email" required>
                     <textarea class="form-control pt-0 px-4 pb-3" placeholder="Nachricht" type="text" name="name"
@@ -37,5 +38,32 @@ defineProps<{
         </div>
     </div>
     <div class="footer-nav container border-top"></div>
-    <Navigation :socialMediaNav="socialMediaNav" :name="name" icon-size="xl" :is-footer="isFooter" :footerNavigation="footerNavigation"/>
+    <Navigation :socialMediaNav="socialMediaNav" :name="name" icon-size="xl" :is-footer="isFooter"
+                :footerNavigation="footerNavigation"/>
 </template>
+
+<script lang="ts">
+import {defineComponent} from "vue";
+
+export default defineComponent({
+    name: 'Load contact form only when cookies are accepted',
+    mounted() {
+        const footerFormCol: HTMLElement | null = document.querySelector('.footer-form-col');
+        const footerMainForm: HTMLElement | null = document.querySelector('.footer-main-form');
+
+        if (footerFormCol && footerMainForm) {
+            // @ts-ignore
+            this.$cc.on('accept', () => {
+                // @ts-ignore
+                if (!this.$cc.getUserPreferences().accepted_categories.includes('contact-form')) {
+                    footerMainForm.remove();
+                    const paragraph: HTMLElement = document.createElement("p");
+                    const noCookiesText: Text = document.createTextNode("Leider hast du der Verwendung des Kontaktformulars nicht zugestimmt. Aber schreib mir doch eine Mail an website@pt1602.de");
+                    paragraph.appendChild(noCookiesText);
+                    footerFormCol.appendChild(paragraph);
+                }
+            })
+        }
+    }
+})
+</script>
