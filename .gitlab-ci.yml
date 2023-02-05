@@ -1,0 +1,32 @@
+stages:
+    - build
+    - deploy
+
+build:
+    image: node:18.13.0
+    stage: build
+    only:
+        - main
+    script:
+        - npm install
+        - npm run build
+    cache:
+        paths:
+            - node_modules/
+    artifacts:
+        paths:
+            - dist/
+        expire_in: 1 hour
+
+dev:
+    stage: deploy
+    image: "edbizarro/gitlab-ci-pipeline-php:8.0"
+    only:
+        - main
+    before_script:
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+    script:
+        - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete dist/* $SSH_CONNECTION
