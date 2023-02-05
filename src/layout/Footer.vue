@@ -30,6 +30,9 @@ defineProps<{
                               required></textarea>
                     <input type="hidden" name="_next" value="#">
                     <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
+                    <input type="hidden" name="_next" value="https://pt1602.de/">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" class="d-none">
                     <div class="d-flex justify-content-end" v-if="sendbutton">
                         <button class="btn btn-outline-primary" type="submit">{{ sendbutton }}</button>
                     </div>
