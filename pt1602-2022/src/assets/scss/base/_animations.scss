@@ -1,0 +1,65 @@
+/* Fany Hover */
+
+.fancyHover {
+    &:hover {
+        background: linear-gradient($brand-primary, $brand-primary) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.shopware:hover {
+        background: linear-gradient($shopware, $shopware) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.twig:hover {
+        background: linear-gradient($twig, $twig) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.scss:hover {
+        background: linear-gradient($scss, $scss) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.javascript:hover {
+        background: linear-gradient($javascript, $javascript) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.vue:hover {
+        background: linear-gradient($vue, $vue) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.typescript:hover {
+        background: linear-gradient($typescript, $typescript) $white no-repeat 0 0;
+        background-size: 0 100%;
+        animation: stripes 1s linear 1 forwards;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes stripes {
+    to {
+        background-size: 100% 100%;
+    }
+}

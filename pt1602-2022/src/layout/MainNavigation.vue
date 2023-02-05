@@ -19,7 +19,7 @@ defineProps<{
                 <div
                     class="col-md-4 d-flex imprint-privacy-nav justify-content-center justify-content-sm-start justify-content-md-center align-items-center order-3 order-md-2 mt-3 mt-md-0"
                     v-if="isFooter">
-                    <span v-for="(item, index) in footerNavigation">
+                    <span v-for="(item, index) in footerNavigation" v-if="footerNavigation">
                         <a :href="item.link" target="_blank">{{ item.text }}</a>
                         <span v-if="index !== footerNavigation.length - 1" class="px-2">&</span>
                     </span>

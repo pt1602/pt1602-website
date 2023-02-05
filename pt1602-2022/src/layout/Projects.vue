@@ -6,7 +6,7 @@ defineProps<{
     projectsheadline: string
     primaryoutlinebuttontext: string
     primaryoutlinebuttonlink: string
-    projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string })[] })[]
+    projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string; target: boolean })[] })[]
 }>()
 </script>
 
@@ -17,7 +17,8 @@ defineProps<{
                 <div class="h1 mb-0" v-if="projectsheadline">{{ projectsheadline }}</div>
             </div>
             <div class="col-6 d-flex justify-content-end align-items-center">
-                <PrimaryOutlineButton :primaryoutlinebuttontext="primaryoutlinebuttontext" :primaryoutlinebuttonlink="primaryoutlinebuttonlink"/>
+                <PrimaryOutlineButton :primaryoutlinebuttontext="primaryoutlinebuttontext"
+                                      :primaryoutlinebuttonlink="primaryoutlinebuttonlink"/>
             </div>
         </div>
         <div class="row">

@@ -1,0 +1,25 @@
+:root{
+    --cc-bg: #242424;
+    --cc-text: #fff;
+    --cc-border-radius: 0;
+    --cc-btn-primary-bg: #55fff5;
+    --cc-btn-primary-text: var(--cc-bg);
+    --cc-btn-primary-hover-bg: #99fff8;
+    --cc-btn-secondary-bg: #404040;
+    --cc-btn-secondary-text: var(--cc-text);
+    --cc-btn-secondary-hover-bg: #595959;
+    --cc-btn-border-radius: 0;
+    --cc-toggle-bg-off: #595959;
+    --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+    --cc-toggle-bg-readonly: #151515;
+    --cc-toggle-knob-bg: #fff;
+    --cc-toggle-knob-icon-color: #ecf2fa;
+    --cc-block-text: var(--cc-text);
+    --cc-cookie-category-block-bg: #404040;
+    --cc-cookie-category-block-bg-hover: #595959;
+    --cc-section-border: #f1f3f5;
+    --cc-cookie-table-border: #e9edf2;
+    --cc-overlay-bg: rgba(4, 6, 8, .85);
+    --cc-webkit-scrollbar-bg: #cfd5db;
+    --cc-webkit-scrollbar-bg-hover: #9199a0;
+}
