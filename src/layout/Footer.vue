@@ -26,7 +26,7 @@ defineProps<{
                       method="POST">
                     <input class="form-control pt-0 px-4 pb-3" placeholder="Name" type="text" name="name" required>
                     <input class="form-control pt-0 px-4 pb-3" placeholder="E-Mail" type="email" name="email" required>
-                    <textarea class="form-control pt-0 px-4 pb-3" placeholder="Nachricht" type="text" name="name"
+                    <textarea class="form-control pt-0 px-4 pb-3" placeholder="Nachricht" type="text" name="message"
                               required></textarea>
                     <input type="hidden" name="_next" value="#">
                     <input type="hidden" name="_subject" value="Neue Kontaktanfrage">
