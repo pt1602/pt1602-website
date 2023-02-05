@@ -28,9 +28,9 @@ dev:
         - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
         - mkdir -p ~/.ssh
         - chmod 700 ~/.ssh
-        - $ADD_HTACCESS
     script:
         - rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete dist/* $SSH_CONNECTION_DEV
+        - ssh -o StrictHostKeyChecking=no "$SSH_CONNECTION" "$ADD_HTACCESS"
 
 live:
     stage: deploy
