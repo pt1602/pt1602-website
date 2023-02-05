@@ -23,6 +23,10 @@
         margin-top: 50px;
     }
 
+    &-headline {
+        min-height: 120px;
+    }
+
     &-text, &-headline {
         margin-bottom: 24px;
     }
@@ -69,6 +73,7 @@
 
         &-headline {
             margin-bottom: 60px;
+            min-height: unset;
 
             &-name {
                 text-underline-offset: 8px;
