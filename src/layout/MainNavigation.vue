@@ -27,7 +27,7 @@ defineProps<{
                 <div class="col-12 d-flex justify-content-center justify-content-sm-end"
                      :class="{'col-sm-6': !isFooter, 'col-sm-6 col-md-4 order-2 order-md-3': isFooter}">
                     <div class="social-media-nav px-3 d-flex align-items-center" v-for="item in socialMediaNav">
-                        <a v-if="item.link" :href="item.link" target="_blank">
+                        <a v-if="item.link" :href="item.link" target="_blank" :aria-label="item.icon">
                             <font-awesome-icon v-if="item.icon"
                                                :icon="'fa-brands fa-' + item.icon" :size="iconSize"
                                                inverse/>
