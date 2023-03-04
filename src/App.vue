@@ -21,7 +21,7 @@ const socialMediaNav: ({ icon?: string; link?: string })[] = [
 const masthead: { primaryoutlinebuttontext: string; primaryoutlinebuttonlink: string; name: string; description: string; subheadline: string } = {
     name: "Philipp Tuchardt",
     subheadline: "Nice to meet&nbsp;you!",
-    description: "Ich bin Webentwickler aus Mitteldeutschland, mit breitgefächertem technischem Interesse. Unter anderem beschäftige ich mich in meiner Freizeit mit Linux-Systemen, 3D-Druck und Fotografie.",
+    description: "Als professioneller Webentwickler aus Halle helfe ich dir dabei, deine Online-Präsenz auf das nächste Level zu bringen. Mit jahrelanger Erfahrung in der Entwicklung von Websites und Webanwendungen stehe ich dir zur Seite, um deine individuellen Anforderungen zu erfüllen.",
     primaryoutlinebuttontext: "Kontakt",
     primaryoutlinebuttonlink: "#contact"
 };
