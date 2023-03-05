@@ -45,14 +45,6 @@ const projectcontact: { primaryoutlinebuttontext: string; primaryoutlinebuttonli
 };
 const projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string, target: boolean })[] })[] = [
     {
-        name: 'Gerade schön',
-        skills: ["Wordpress", "PHP", "CSS"],
-        buttons: [
-            {link: "https://www.gerade-schoen.de", text: 'Zum Projekt', target: true}
-        ],
-        image: 'gerade-schoen.jpg'
-    },
-    {
         name: 'Noon - DJ and Producer',
         skills: ["Bootstrap", "HTML", "SCSS"],
         buttons: [
@@ -61,12 +53,12 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         image: 'noon-official.jpg'
     },
     {
-        name: 'Tuzuz',
-        skills: ["Wordpress", "WPBakery", "PHP"],
+        name: 'Gerade schön',
+        skills: ["Wordpress", "PHP", "CSS"],
         buttons: [
-            {link: "https://tuzuz.de/", text: 'Zum Projekt', target: true}
+            {link: "https://www.gerade-schoen.de", text: 'Zum Projekt', target: true}
         ],
-        image: 'tuzuz.jpg'
+        image: 'gerade-schoen.jpg'
     },
     {
         name: 'Zahnheilkunde Lienemann',
@@ -77,12 +69,12 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
         image: 'zahnheilkunde-lienemann.jpg'
     },
     {
-        name: 'Mein Notizbuch',
-        skills: ["Hugo", "Markdown", "CSS"],
+        name: 'Tuzuz',
+        skills: ["Wordpress", "WPBakery", "PHP"],
         buttons: [
-            {link: "https://blog.pt1602.de/", text: 'Zum Projekt', target: true},
+            {link: "https://tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
-        image: 'blog.pt1602.jpg'
+        image: 'tuzuz.jpg'
     },
     {
         name: 'Tuzuz Shop',
@@ -91,6 +83,14 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
             {link: "https://shop.tuzuz.de/", text: 'Zum Projekt', target: true}
         ],
         image: 'tuzuz-shop.jpg'
+    },
+    {
+        name: 'Diese Website',
+        skills: ["Vue", "SCSS", "Typescript"],
+        buttons: [
+            {link: "https://github.com/pt1602/pt1602-website", text: 'Code auf Github', target: true},
+        ],
+        image: 'website.pt1602.jpg'
     },
 ];
 
