@@ -89,8 +89,34 @@ const consentOptions = {
                                 col3: '1 year',
                                 col4: 'Der von mir gewählte Hoster (www.lima-city.de) setzt im Rahmen der Bot-Sperre Cookies (Name "lcp", "lcp2", "_lcp3"). Diese Cookies sind nicht personenbezogen und haben daher keinen Bedeutung im Rahmen der DSGVO.',
                                 is_regex: true
+                            },
+
+                            {
+                                col1: 'pt_cookie',
+                                col2: 'pt1602.de',
+                                col3: '30 days',
+                                col4: 'Cookie um die gewählten Einstellungen des Cookie-Layers zu speichern.',
+                                is_regex: false
                             }
                         ]
+                    },
+                    {
+                        title: 'Google Analytics',
+                        description: 'Google Analytics (GA) ist ein Trackingtool des US-amerikanischen Unternehmens Google LLC, das der Datenverkehrsanalyse von Webseiten (Webanalyse) dient.',
+                        cookie_table: [
+                            {
+                                col1: '_ga*',
+                                col2: 'www.google.com',
+                                col3: '30 days',
+                                col4: 'Google Analytics setzt diverse mit Cookies, welche mit "_ga" starten.',
+                                is_regex: true
+                            }
+                        ],
+                        toggle: {
+                            value: 'analytics',
+                            enabled: true,
+                            readonly: false
+                        }
                     },
                     {
                         title: 'Kontaktformular',
@@ -102,17 +128,12 @@ const consentOptions = {
                         }
                     },
                     {
-
                         title: 'Weitere Informationen',
                         description: 'Solltest du zusätzliche Informationen benötigen oder Fragen haben <a class="cc-link" target="_blank" href="mailto:cookies@pt1602.de">kontaktiere mich</a>.',
                     }
                 ]
             }
         }
-    },
-
-    onAccept: function(){
-        alert('hey')
     },
 }
 

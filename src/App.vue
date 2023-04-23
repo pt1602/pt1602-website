@@ -18,7 +18,13 @@ const socialMediaNav: ({ icon?: string; link?: string })[] = [
 ];
 
 /* Masthead */
-const masthead: { primaryoutlinebuttontext: string; primaryoutlinebuttonlink: string; name: string; description: string; subheadline: string } = {
+const masthead: {
+    primaryoutlinebuttontext: string;
+    primaryoutlinebuttonlink: string;
+    name: string;
+    description: string;
+    subheadline: string
+} = {
     name: "Philipp Tuchardt",
     subheadline: "Nice to meet&nbsp;you!",
     description: "Als professioneller Webentwickler aus Halle helfe ich dir dabei, deine Online-Präsenz auf das nächste Level zu bringen. Mit jahrelanger Erfahrung in der Entwicklung von Websites und Webanwendungen stehe ich dir zur Seite, um deine individuellen Anforderungen zu erfüllen.",
@@ -43,7 +49,12 @@ const projectcontact: { primaryoutlinebuttontext: string; primaryoutlinebuttonli
     primaryoutlinebuttontext: "Kontakt",
     primaryoutlinebuttonlink: "#contact"
 };
-const projects: ({ name: string; image: string; skills: string[]; buttons: ({ link: string; text: string, target: boolean })[] })[] = [
+const projects: ({
+    name: string;
+    image: string;
+    skills: string[];
+    buttons: ({ link: string; text: string, target: boolean })[]
+})[] = [
     {
         name: 'Noon - DJ and Producer',
         skills: ["Bootstrap", "HTML", "SCSS"],
@@ -95,7 +106,13 @@ const projects: ({ name: string; image: string; skills: string[]; buttons: ({ li
 ];
 
 /* Footer */
-const footer: { headline: string; text: string; sendbutton: string; isFooter: boolean; navigation: ({ link: string; text: string })[] } = {
+const footer: {
+    headline: string;
+    text: string;
+    sendbutton: string;
+    isFooter: boolean;
+    navigation: ({ link: string; text: string })[]
+} = {
     headline: "Kontakt",
     text: "Liebend gern würde ich mehr über dich und dein Projekt erfahren, auch wie ich dich unterstützen kann. Füll doch das Formular aus und ich komme so schnell wie möglich auf dich zurück.<br>Du hast es eilig? Buche dir direkt einen <a href='https://calendly.com/pt1602/meeting' target='_blank'>Termin.</a>",
     sendbutton: "Senden",
@@ -141,5 +158,40 @@ const footer: { headline: string; text: string; sendbutton: string; isFooter: bo
                 :footerNavigation="footer.navigation"/>
     </footer>
 </template>
+
+<script lang="ts">
+import {defineComponent} from "vue";
+
+export default defineComponent({
+    name: 'Load analytics only when cookies are accepted',
+    mounted() {
+        // @ts-ignore
+        this.$cc.on('accept', () => {
+            // @ts-ignore
+            if (this.$cc.getUserPreferences().accepted_categories.includes('analytics')) {
+                const head: HTMLHeadElement = document.getElementsByTagName('head')[0];
+                const tagmanager: HTMLScriptElement = document.createElement("script");
+
+                tagmanager.type = "text/javascript";
+                tagmanager.src = "https://www.googletagmanager.com/gtag/js?id=G-TD2Y251S8N";
+
+                head.appendChild(tagmanager);
+
+                // @ts-ignore
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    // @ts-ignore
+                    dataLayer.push(arguments);
+                }
+                // @ts-ignore
+                gtag('js', new Date());
+                // @ts-ignore
+                gtag('config', 'G-TD2Y251S8N');
+            }
+        })
+    }
+})
+</script>
 
 
